@@ -7,9 +7,7 @@ Manzil is your ultimate AI-powered travel companion, designed to make your journ
 Check out the features of Manzil in action:
 
 <div align="center">
-  <video src="projectVid/manzil_demo.mp4" controls="controls" style="max-width: 100%;"></video>
-  <br/>
-  <em>(If the video doesn't play, <a href="projectVid/manzil_demo.mp4">click here to download/view it directly</a>)</em>
+  <h3><a href="https://drive.google.com/file/d/1ztjGgamdZzCARI40e8qMNbQdMm40mt5t/view?usp=sharing" target="_blank">Click on the link to see the live demo of the project 🎥</a></h3>
 </div>
 
 ## ✨ Features
