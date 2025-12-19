@@ -1,0 +1,327 @@
+/* --- Navbar Base --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 10, 25, 0.7);
+  backdrop-filter: blur(12px);
+  color: white;
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: background 0.4s ease;
+}
+
+.navbar:hover {
+  background: rgba(15, 15, 35, 0.9);
+}
+
+/* --- Logo --- */
+.logo a {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: text-shadow 0.3s ease;
+}
+
+.logo a:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* --- Left Navigation Links --- */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 2px;
+}
+
+.nav-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-left a:hover {
+  color: #ffcc00; /* subtle gold accent */
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+}
+
+/* --- Right Section (User + Miles + Buttons) --- */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px; /* was 18px — increased for cleaner spacing */
+  list-style: none;
+  margin: 0 8px; /* adds small buffer spacing inside the container */
+  padding: 0;
+}
+
+
+/* --- Manzil Miles Badge --- */
+.manzil-miles {
+  background: linear-gradient(90deg, #ffd700, #ff8800);
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+.manzil-miles:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.7);
+}
+
+/* --- User Info --- */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* --- Buttons --- */
+.btn-login,
+.btn-signup,
+.btn-logout {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-login {
+  background: transparent;
+  color: white;
+  border: 1px solid #ffcc00;
+}
+
+.btn-login:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+.btn-signup {
+  background: linear-gradient(90deg, #ff8800, #ff5500);
+  color: white;
+}
+
+.btn-signup:hover {
+  background: linear-gradient(90deg, #ffcc00, #ffaa00);
+  color: #000;
+}
+
+.btn-logout {
+  background: linear-gradient(90deg, #ff4500, #ff8800);
+  color: white;
+}
+
+.btn-logout:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ffcc00, #ff5500);
+  color: #000;
+}
+
+/* --- Responsive --- */
+@media (max-width: 960px) {
+  .nav-left {
+    display: none;
+  }
+  .nav-right {
+    gap: 10px;
+  }
+  .logo a {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================================
+   ➤ DROPDOWN STYLES (New Feature)
+   ========================================= */
+
+/* Parent Container */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 10px; /* Increases hover area so menu doesn't close instantly */
+  margin-bottom: -10px; /* Counteracts the padding */
+}
+
+.dropdown-title {
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-title {
+  color: #ffcc00;
+}
+
+/* Dropdown Menu Box */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(15, 15, 35, 0.95); /* Slightly darker for readability */
+  backdrop-filter: blur(12px);
+  min-width: 180px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Soft Fade In Animation */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* Show on Hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(255, 204, 0, 0.15);
+  color: #ffcc00;
+  transform: none; /* Overrides main nav hover movement */
+}
+
+.dd-icon {
+  font-size: 1.1rem;
+  color: #ffcc00;
+}
+/* ===========================================
+   🔥 PREMIUM ANIMATED & GLOWING DROPDOWN
+   =========================================== */
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dropdown title hover glow */
+.dropdown-title {
+  color: white;
+  font-weight: 500;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.dropdown-title:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 12px rgba(255, 204, 0, 0.9);
+}
+
+/* Dropdown menu (hidden initially) */
+.dropdown-menu {
+  position: absolute;
+  top: 28px;
+  left: -8px;
+  background: rgba(15, 15, 35, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 10px;
+  padding: 10px 0;
+  min-width: 190px;
+  
+  /* Animation initial state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px) scale(0.96);
+  transition: opacity 0.35s ease,
+              transform 0.35s cubic-bezier(0.25, 1.25, 0.5, 1),
+              visibility 0.35s ease;
+  
+  /* Glow */
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 204, 0, 0.20);
+  z-index: 9999;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Dropdown item */
+.dropdown-menu li {
+  list-style: none;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Item text + icon */
+.dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.92rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  transition: color 0.2s ease,
+              padding-left 0.2s ease,
+              text-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.dropdown-menu li:hover a {
+  padding-left: 20px;
+  color: #ffcc00;
+  text-shadow: 0 0 12px rgba(255, 204, 0, 0.7);
+}
+
+/* Icon glow */
+.dropdown-menu li:hover svg {
+  filter: drop-shadow(0 0 6px rgba(255, 204, 0, 0.9));
+  transition: 0.3s ease;
+}

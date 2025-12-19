@@ -1,0 +1,497 @@
+/* --- Global Reset & Variables (Dark Theme) --- */
+:root {
+    --color-primary: #1e8392; /* Teal/Cyan for accents */
+    --color-secondary: #00b4d8; /* Brighter accent */
+    --color-bg-dark: #121212; /* Deep Black/Dark Gray BG */
+    --color-bg-light: #1c1c1c; /* Slightly lighter surface */
+    --color-text-light: #e0e0e0; /* Main text color */
+    --color-text-secondary: #8d8d8d; /* Sub-text color */
+    --color-rating: #48cae4; /* Rating star color (used for background/accents) */
+    --color-gold: #ffd700; /* Gold/Yellow for price emphasis */
+    --shadow-dark: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* --- Main Page Container --- */
+.hotels-page-mmt {
+    min-height: 100vh;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    font-family: 'Roboto', sans-serif;
+    padding-top: 80px; /* Space for fixed Navbar */
+}
+
+/* --- Hero & Search Section (MMT Style) --- */
+.hotels-hero-section {
+    /* Use a simple gradient/solid color to keep the focus on the search bar */
+    background: linear-gradient(180deg, rgba(30, 131, 146, 0.3), var(--color-bg-dark) 90%);
+    padding: 100px 20px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Search Bar Container (Glass Effect) --- */
+.search-bar-mmt-container {
+    position: relative;
+    z-index: 3;
+    width: 95%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(28, 28, 28, 0.7); /* Dark semi-transparent background */
+    box-shadow: var(--shadow-glass);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.search-bar-mmt {
+    display: flex;
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 180, 216, 0.1); /* Subtle glow */
+}
+
+.input-group-mmt {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background-color 0.2s;
+    cursor: text;
+}
+
+.input-group-mmt:last-of-type {
+    border-right: none;
+}
+
+.input-group-mmt label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-secondary); /* Accent color for labels */
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.input-group-mmt input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0;
+    outline: none;
+}
+
+.input-group-mmt input::placeholder {
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+
+/* Specific group styles */
+.destination-group {
+    flex-grow: 2.5;
+}
+.date-group {
+    flex-grow: 1.2;
+}
+.guests-group {
+    flex-grow: 1.5;
+}
+
+/* Search Button */
+.search-btn-mmt {
+    /* Use strong gradient for button */
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-bg-dark);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.2s;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); /* Diagonal cut on left */
+}
+
+.search-btn-mmt:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.search-btn-mmt:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* --- Hotel Listing Section --- */
+.hotel-listing-mmt-container {
+    display: flex;
+    width: 95%;
+    max-width: 1300px;
+    margin: 40px auto;
+    gap: 30px;
+}
+
+/* Sidebar (Filters) */
+.listing-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    padding: 20px;
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+    box-shadow: var(--shadow-dark);
+    height: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-title {
+    color: var(--color-secondary);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.filter-hint p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin: 5px 0;
+}
+
+/* Results Area */
+.listing-results {
+    flex-grow: 1;
+}
+
+.results-header {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.hotel-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Hotel Card (Screenshot Layout) --- */
+.hotel-card-mmt {
+    display: flex;
+    background-color: var(--color-bg-light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hotel-card-mmt:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Section */
+.hotel-image-section {
+    width: 350px; /* Wider image section */
+    flex-shrink: 0;
+    position: relative;
+    height: 250px; /* Fixed height for consistency */
+}
+
+.hotel-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hotel-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: var(--shadow-dark);
+}
+
+/* Details Section (Left/Center Column) */
+.hotel-details-section {
+    flex-grow: 1;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-name {
+    font-size: 1.6rem;
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.hotel-location {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+}
+
+/* Rating and Review Container */
+.rating-review-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.rating-box {
+    background-color: #38a3a5; /* Dark teal/cyan for rating */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.review-count {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.hotel-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.amenity-badge {
+    background-color: rgba(0, 180, 216, 0.1); /* Light background with secondary color tint */
+    color: var(--color-secondary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+}
+
+.hotel-description {
+    margin-top: auto; /* Push to bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.hotel-type {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.policy-badge {
+    background-color: #2e8b57; /* Sea green for policy/cancellation */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Price Section (Right Column) */
+.hotel-price-section {
+    width: 200px;
+    flex-shrink: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-dark); /* Contrast background */
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.price-info {
+    margin-bottom: 5px;
+}
+
+.old-price {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-decoration: line-through;
+    margin: 0;
+}
+
+.current-price {
+    font-size: 1.8rem;
+    color: var(--color-gold); 
+    margin: 0;
+    font-weight: 900;
+}
+
+.per-night {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+}
+
+.discount-badge {
+    background-color: #e63946; /* Red for discount */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 10px 0 15px;
+}
+
+.view-details-btn {
+    background: linear-gradient(135deg, #184e77, #1e8392);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.view-details-btn:hover {
+    background: linear-gradient(135deg, #1e8392, #184e77);
+}
+
+/* --- State Messages (Loading, Initial, No Results) --- */
+.loading-state, .initial-state, .no-results-state {
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: var(--color-bg-light);
+    border: 1px dashed rgba(0, 180, 216, 0.3);
+}
+
+.loading-state p, .no-results-state p, .initial-state p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.no-results-state h2, .initial-state h2 {
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid var(--color-secondary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 1024px) {
+    .search-bar-mmt {
+        flex-wrap: wrap;
+    }
+    .input-group-mmt {
+        flex-grow: 1;
+        width: 50%;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .input-group-mmt:nth-child(2),
+    .input-group-mmt:nth-child(3) {
+        /* check-in and check-out */
+        width: 50%;
+    }
+    .input-group-mmt:last-of-type {
+        border-bottom: none;
+    }
+    .search-btn-mmt {
+        width: 100%;
+        clip-path: none;
+        padding: 15px 30px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .hotel-listing-mmt-container {
+        flex-direction: column;
+        width: 90%;
+    }
+    .listing-sidebar {
+        width: 100%;
+    }
+    .hotel-card-mmt {
+        flex-direction: column;
+    }
+    .hotel-image-section {
+        width: 100%;
+        height: 250px;
+    }
+    .hotel-details-section {
+        padding: 15px;
+    }
+    .hotel-price-section {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-left: none;
+    }
+    .hotel-price-section .price-info,
+    .hotel-price-section .view-details-btn {
+        width: 45%;
+    }
+    .per-night, .discount-badge {
+        display: none; 
+    }
+    .rating-review-container {
+        order: -1; /* Move rating above name on smaller screens */
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hotels-hero-section {
+        padding: 50px 10px 30px;
+    }
+    .input-group-mmt {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .input-group-mmt:nth-child(2),
+    .input-group-mmt:nth-child(3) {
+        width: 100%;
+    }
+    .hotel-price-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .hotel-price-section .price-info,
+    .hotel-price-section .view-details-btn {
+        width: 100%;
+    }
+}

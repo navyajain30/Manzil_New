@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "airline": "IndiGo",
+    "departure": "Delhi (DEL)",
+    "arrival": "Mumbai (BOM)",
+    "depTime": "10:00 AM",
+    "arrTime": "12:00 PM",
+    "price": "₹ 5,500"
+  },
+  {
+    "id": 2,
+    "airline": "Vistara",
+    "departure": "Delhi (DEL)",
+    "arrival": "Mumbai (BOM)",
+    "depTime": "01:30 PM",
+    "arrTime": "03:45 PM",
+    "price": "₹ 6,200"
+  },
+  {
+    "id": 3,
+    "airline": "Air India",
+    "departure": "Delhi (DEL)",
+    "arrival": "Mumbai (BOM)",
+    "depTime": "06:00 PM",
+    "arrTime": "08:15 PM",
+    "price": "₹ 5,800"
+  },
+  {
+    "id": 4,
+    "airline": "SpiceJet",
+    "departure": "Delhi (DEL)",
+    "arrival": "Bengaluru (BLR)",
+    "depTime": "08:00 AM",
+    "arrTime": "10:30 AM",
+    "price": "₹ 4,900"
+  },
+  {
+    "id": 5,
+    "airline": "GoAir",
+    "departure": "Delhi (DEL)",
+    "arrival": "Bengaluru (BLR)",
+    "depTime": "02:00 PM",
+    "arrTime": "04:45 PM",
+    "price": "₹ 5,300"
+  }
+]

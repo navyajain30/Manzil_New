@@ -1,0 +1,84 @@
+/* Auth container is isolated from the rest of the app */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px); /* Adjust for Navbar + Footer space */
+  color: #fff;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 25px;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), #0a0f2c;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  box-sizing: border-box;
+}
+
+/* Heading */
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #ffd700;
+  letter-spacing: 1px;
+}
+
+/* Form styling */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Input fields */
+.auth-container input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 15px;
+  background: #fff;
+  color: #000;
+}
+
+/* Buttons */
+.auth-container button {
+  padding: 12px;
+  background: #ffd700;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0a0f2c;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.auth-container button:hover {
+  background: #e6c200;
+  transform: scale(1.03);
+}
+
+/* Paragraph and link */
+.auth-container p {
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.auth-container span {
+  color: #ffd700;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Mobile-friendly */
+@media (max-width: 420px) {
+  .auth-container {
+    margin: 30px 16px;
+    padding: 20px;
+  }
+}

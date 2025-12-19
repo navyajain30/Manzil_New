@@ -1,0 +1,111 @@
+[
+
+  {
+
+    "id": 1,
+
+    "emoji": "🗻",
+
+    "title": "Manali",
+
+    "description": "Snowy Serenity & Solitude"
+
+  },
+
+  {
+
+    "id": 2,
+
+    "emoji": "🌊",
+
+    "title": "Goa",
+
+    "description": "Sunset Parties & Beach Vibes"
+
+  },
+
+  {
+
+    "id": 3,
+
+    "emoji": "🕌",
+
+    "title": "Jaipur",
+
+    "description": "Royal Palaces & Heritage"
+
+  },
+
+  {
+
+    "id": 4,
+
+    "emoji": "🏞",
+
+    "title": "Rishikesh",
+
+    "description": "Yoga, Ganga & Thrill"
+
+  },
+
+  {
+
+    "id": 5,
+
+    "emoji": "🌿",
+
+    "title": "Coorg",
+
+    "description": "Coffee Trails & Nature"
+
+  },
+
+  {
+
+    "id": 6,
+
+    "emoji": "🏔",
+
+    "title": "Ladakh",
+
+    "description": "Mountains & Monasteries"
+
+  },
+
+  {
+
+    "id": 7,
+
+    "emoji": "🌆",
+
+    "title": "Mumbai",
+
+    "description": "City of Dreams"
+
+  },
+
+  {
+
+    "id": 8,
+
+    "emoji": "🧭",
+
+    "title": "Varanasi",
+
+    "description": "Spiritual Awakening"
+
+  },
+
+  {
+
+    "id": 9,
+
+    "emoji": "🏖",
+
+    "title": "Andaman",
+
+    "description": "Coral Reefs & Clear Waters"
+
+  }
+
+]

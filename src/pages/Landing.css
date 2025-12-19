@@ -1,0 +1,422 @@
+/* --- Landing.css --- */
+/* 🌍 Global Reset */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0a0f2c;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.landing-container {
+  overflow-x: hidden;
+}
+
+/* --- 🏞 HERO SECTION --- */
+.landing-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.background-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.65);
+}
+
+.overlay {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeSlideIn 2s ease-out forwards;
+  z-index: 5;
+}
+
+/* ✨ Glowing White Hero Title */
+.title {
+  font-size: 9rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: none;
+  text-shadow: 
+    0 0 25px rgba(255, 255, 255, 0.7),
+    0 0 50px rgba(255, 255, 255, 0.4),
+    0 0 80px rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease-in-out;
+}
+
+.title:hover {
+  transform: scale(1.04);
+  text-shadow: 
+    0 0 35px rgba(255, 255, 255, 0.9),
+    0 0 70px rgba(255, 255, 255, 0.6);
+}
+
+/* 🌟 Subtitle */
+.subtitle {
+  font-size: 2rem;
+  color: #f5f5f5;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* ✈ Call-To-Action Buttons */
+.cta-buttons .btn {
+  margin: 0 10px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.cta-buttons .btn:hover {
+  background: #ffffff;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* Smooth fade-in on scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 💫 ABOUT SECTION --- */
+.about-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+
+.about-section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.about-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1100px;
+  padding: 40px;
+}
+
+.about-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #eee;
+}
+
+.about-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 20px;
+  min-width: 250px;
+  max-width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+/* --- 🎒 PACKAGES SECTION --- */
+.packages-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.packages-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.35);
+}
+
+.packages-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+}
+
+.packages-overlay h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.packages-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #ddd;
+}
+
+.package-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 1rem;
+}
+
+.package-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.package-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* --- 💬 TESTIMONIALS --- */
+.testimonials {
+  position: relative;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.testimonials .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.testimonials .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+.testimonials .content {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 300px;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 📞 CONTACT SECTION --- */
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #cfd8ff;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 20px;
+  color: #fff;
+  width: auto;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.contact-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.contact-card p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.contact-link,
+.support-btn {
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 8px;
+  color: #cfd8ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact-link:hover,
+.support-btn:hover {
+  color: #fff;
+}
+
+.contact-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #ffcc00;
+}
+
+.contact-card.location {
+  flex-basis: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* --- Animations --- */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 📱 Responsive Hero Text --- */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 6rem;
+  }
+  .subtitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,101 @@
+/* ================================
+   Map Container Styling
+================================ */
+.custom-map-container {
+  height: 500px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+/* ================================
+   Heading Above Map
+================================ */
+.map-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 20px 0 15px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+
+.map-heading {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.85);
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  z-index: 1000;
+}
+
+
+/* ================================
+   Leaflet Popup Customization
+================================ */
+.leaflet-popup-content-wrapper {
+  background: #222;
+  color: #eee;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.leaflet-popup-tip {
+  background: #222;
+}
+
+/* ================================
+   Custom Search Bar Styling
+================================ */
+.custom-search-bar .leaflet-control-search {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  border-radius: 25px;
+  background: #fff;
+  border: 1px solid #ddd;
+  width: 260px !important;
+  font-size: 1rem;
+  padding: 5px 15px !important;
+  transition: all 0.3s ease;
+}
+
+.custom-search-bar .leaflet-control-search:hover,
+.custom-search-bar .leaflet-control-search:focus-within {
+  box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+  border-color: #007bff;
+}
+
+.custom-search-bar input {
+  border: none !important;
+  outline: none !important;
+  font-size: 1rem !important;
+  padding: 8px 15px !important;
+  border-radius: 25px !important;
+}
+
+/* ================================
+   Responsive Styling
+================================ */
+@media (max-width: 600px) {
+  .custom-map-container {
+    height: 350px;
+  }
+
+  .map-heading {
+    font-size: 1.4rem;
+    margin: 15px 0 10px 0;
+  }
+
+  .custom-search-bar .leaflet-control-search {
+    width: 180px !important;
+  }
+}
